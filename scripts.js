@@ -23,6 +23,8 @@ window.addEventListener('load', function(){
     //Add an alert letting the user konw "The shuttle is landing. Landing gear engaged."
     landing.addEventListener('click', function(){
         alert('The shuttle is landing. Landing gear engaged');
+        //Change flight status to the shuttle has landed
+        flightStatus.innerHTML = "The shuttle has landed.";
     });
 
 
