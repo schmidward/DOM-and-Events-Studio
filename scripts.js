@@ -51,12 +51,18 @@ window.addEventListener('load', function(){
     });
 
     //Add update events for button clicks on up, down, right and left
+    
+    //UP button click goes up by 10px
     up.addEventListener('click', function(){
-        let newBottom = parseInt(rocket.style.bottom)
-        console.log(newBottom);
+        let newBottom = parseInt(rocket.style.bottom);
         newBottom += 10;
         rocket.style.bottom = newBottom + 'px';
     });
-    console.dir(rocket);
+    //right button click moves the rocket right by 10px
+    right.addEventListener('click', function(){
+        let newLeft = parseInt(rocket.style.left);
+        newLeft += 10;
+        rocket.style.left = newLeft + 'px';
+    });
 });
 
