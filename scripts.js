@@ -5,13 +5,12 @@ window.addEventListener('load', function(){
     const flightStatus = document.getElementById('flightStatus');
     const shuttleBackground = document.querySelector('#shuttleBackground');
     const spaceShuttleHeight = document.getElementById('spaceShuttleHeight');
+    const landing = document.querySelector('#landing');
 
     //Add a window asking the user to confirm the shuttle is ready for takeoff
     takeoff.addEventListener('click', function(){
-        let takeoffResponse = confirm("Confirm that the shuttle is ready for takeoff");
-                
-
-        if (takeoffResponse) {
+        let response = confirm("Confirm that the shuttle is ready for takeoff");
+        if (response) {
             //Update flight status to shuttle in flight
             flightStatus.innerHTML ='Shuttle in flight.';
             //Make background color blue if launch selected
@@ -20,7 +19,13 @@ window.addEventListener('load', function(){
             spaceShuttleHeight.innerHTML = '10,000';
         }
     });
-    console.dir(shuttleBackground);
+
+    //Add an alert letting the user konw "The shuttle is landing. Landing gear engaged."
+    landing.addEventListener('click', function(){
+        alert('The shuttle is landing. Landing gear engaged');
+    });
+
+
 
 });
 
