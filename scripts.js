@@ -6,6 +6,7 @@ window.addEventListener('load', function(){
     const shuttleBackground = document.querySelector('#shuttleBackground');
     const spaceShuttleHeight = document.getElementById('spaceShuttleHeight');
     const landing = document.querySelector('#landing');
+    const missionAbort = document.getElementById('missionAbort');
 
     //Add a window asking the user to confirm the shuttle is ready for takeoff
     takeoff.addEventListener('click', function(){
@@ -16,7 +17,7 @@ window.addEventListener('load', function(){
             //Make background color blue if launch selected
             shuttleBackground.style.backgroundColor = 'blue';
             //Update shuttle height to 10,000 miles
-            spaceShuttleHeight.innerHTML = 10000;
+            spaceShuttleHeight.innerHTML = '10000';
         }
     });
 
@@ -28,10 +29,20 @@ window.addEventListener('load', function(){
         //Upadte the background color from blue to green
         shuttleBackground.style.backgroundColor = 'green';
         //The shuttle height goes down to zero 
-        spaceShuttleHeight.innerHTML = 0;
+        spaceShuttleHeight.innerHTML = '0';
     });
 
-
+    //Add confirm for the abort mission button
+    missionAbort.addEventListener('click', function(){
+        let response = confirm("Confirm that you want to abort the mission");
+        console.log(`Abort parameter is ${response}`);
+        //change flight status to mission aborted
+        flightStatus.innerHTML = "Misson aborted.";
+        //Upadte the background color from blue to green
+        shuttleBackground.style.backgroundColor = 'green';
+        //The shuttle height goes down to zero 
+        spaceShuttleHeight.innerHTML = '0';
+    });
 
 });
 
