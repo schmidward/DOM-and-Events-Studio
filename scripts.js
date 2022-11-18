@@ -12,6 +12,7 @@ window.addEventListener('load', function(){
     const down = document.getElementById('down');
     const right = document.getElementById('right');
     const left = document.getElementById('left');
+    let altitude = 0;
 
 
     //Add a window asking the user to confirm the shuttle is ready for takeoff
@@ -23,7 +24,8 @@ window.addEventListener('load', function(){
             //Make background color blue if launch selected
             shuttleBackground.style.backgroundColor = 'blue';
             //Update shuttle height to 10,000 miles
-            spaceShuttleHeight.innerHTML = '10000';
+            altitude = 10000;
+            spaceShuttleHeight.innerHTML = altitude;
         }
     });
 
@@ -35,7 +37,8 @@ window.addEventListener('load', function(){
         //Upadte the background color from blue to green
         shuttleBackground.style.backgroundColor = 'green';
         //The shuttle height goes down to zero 
-        spaceShuttleHeight.innerHTML = '0';
+        altitude = 0;
+        spaceShuttleHeight.innerHTML = altitude;
     });
 
     //Add confirm for the abort mission button
@@ -47,7 +50,8 @@ window.addEventListener('load', function(){
         //Upadte the background color from blue to green
         shuttleBackground.style.backgroundColor = 'green';
         //The shuttle height goes down to zero 
-        spaceShuttleHeight.innerHTML = '0';
+        altitude = 0;
+        spaceShuttleHeight.innerHTML = altitude;
     });
 
     //Add update events for button clicks on up, down, right and left
@@ -57,11 +61,27 @@ window.addEventListener('load', function(){
         let newBottom = parseInt(rocket.style.bottom);
         newBottom += 10;
         rocket.style.bottom = newBottom + 'px';
+        altitude += 10000;
+        spaceShuttleHeight.innerHTML = altitude;
+    });
+    //down button click moves the rocket down by 10px
+    down.addEventListener('click', function(){
+        let newBottom = parseInt(rocket.style.bottom);
+        newBottom -= 10;
+        rocket.style.bottom = newBottom + 'px';
+        altitude -= 10000;
+        spaceShuttleHeight.innerHTML = altitude;
     });
     //right button click moves the rocket right by 10px
     right.addEventListener('click', function(){
         let newLeft = parseInt(rocket.style.left);
         newLeft += 10;
+        rocket.style.left = newLeft + 'px';
+    });
+    //left button moves the rocket left by 10px
+    left.addEventListener('click', function(){
+        let newLeft = parseInt(rocket.style.left);
+        newLeft -= 10;
         rocket.style.left = newLeft + 'px';
     });
 });
