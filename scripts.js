@@ -16,7 +16,7 @@ window.addEventListener('load', function(){
             //Make background color blue if launch selected
             shuttleBackground.style.backgroundColor = 'blue';
             //Update shuttle height to 10,000 miles
-            spaceShuttleHeight.innerHTML = '10,000';
+            spaceShuttleHeight.innerHTML = 10000;
         }
     });
 
@@ -27,6 +27,8 @@ window.addEventListener('load', function(){
         flightStatus.innerHTML = "The shuttle has landed.";
         //Upadte the background color from blue to green
         shuttleBackground.style.backgroundColor = 'green';
+        //The shuttle height goes down to zero 
+        spaceShuttleHeight.innerHTML = 0;
     });
 
 
