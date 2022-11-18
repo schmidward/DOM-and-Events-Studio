@@ -25,6 +25,8 @@ window.addEventListener('load', function(){
         alert('The shuttle is landing. Landing gear engaged');
         //Change flight status to the shuttle has landed
         flightStatus.innerHTML = "The shuttle has landed.";
+        //Upadte the background color from blue to green
+        shuttleBackground.style.backgroundColor = 'green';
     });
 
 
